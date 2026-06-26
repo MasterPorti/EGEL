@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
+                "file": "estudio_area_2_diseno.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GUIA_COMPLETA_EGEL_PLUS_ISOFT"
+              "title": "estudio_area_2_diseno"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
+                "file": "estudio_area_2_diseno.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de GUIA_COMPLETA_EGEL_PLUS_ISOFT"
+              "title": "Enlaces entrantes de estudio_area_2_diseno"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
+                "file": "estudio_area_2_diseno.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de GUIA_COMPLETA_EGEL_PLUS_ISOFT"
+              "title": "Enlaces salientes de estudio_area_2_diseno"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
+                "file": "estudio_area_2_diseno.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de GUIA_COMPLETA_EGEL_PLUS_ISOFT"
+              "title": "Esquema de estudio_area_2_diseno"
             }
           }
         ]
@@ -185,7 +185,8 @@
   },
   "active": "2c4a30fc6a2b94f9",
   "lastOpenFiles": [
-    "temario_detallado_egel.md",
-    "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md"
+    "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
+    "estudio_area_2_diseno.md",
+    "temario_detallado_egel.md"
   ]
 }
