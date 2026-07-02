@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador EGEL Plus - Área 1: Análisis de Sistemas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Barra de Navegación de Estudio -->
+    <div class="study-nav">
+      <h2 style="font-weight: 700; font-size: 1.4rem; background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        🎓 EGEL Plus ISOFT
+      </h2>
+      <div class="study-nav-links">
+        <a href="index.html" class="study-nav-link active">Simulador</a>
+        <a href="estudio.html" class="study-nav-link">Guía Interactiva</a>
+      </div>
+    </div>
+    
+    <!-- PANTALLA DE BIENVENIDA -->
+    <div id="welcome-screen">
+      <h1>🎯 SIMULADOR EGEL PLUS</h1>
+      <h2>Área 1: Análisis de Sistemas de Software</h2>
+      <p class="subtitle">
+        Prepárate para obtener el nivel de <strong>Sobresaliente</strong> con este simulador interactivo de 10 reactivos diseñados exactamente como los reactivos reales del CENEVAL (opción múltiple de 3 opciones).
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">📋</span>
+          <h3>10 Reactivos Reales</h3>
+          <p>Preguntas sobre tipos de requerimientos, técnicas de elicitación y modelado UML (Casos de uso, clases, secuencia).</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📝</span>
+          <h3>Cuaderno de Notas</h3>
+          <p>Escribe tus dudas o apuntes directamente en cada pregunta o de forma general para repasarlos al terminar.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💾</span>
+          <h3>Persistencia Local</h3>
+          <p>Guarda tus respuestas en un archivo <code>resultados.json</code> para que Antigravity las lea y te arme una guía de estudio personalizada.</p>
+        </div>
+      </div>
+      
+      <h3 style="margin-bottom: 20px; font-weight: 600; font-size: 1.3rem;">Selecciona el Módulo de Estudio:</h3>
+      <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
+        <button id="start-general-btn" class="btn btn-primary">📋 Simulador General (10 Reactivos)</button>
+        <button id="start-uml-btn" class="btn btn-accent">📐 Especialidad: UML y Calidad (5 Reactivos)</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA DEL EXAMEN -->
+    <div id="quiz-screen" class="hidden">
+      <div class="progress-container">
+        <div class="progress-bar-bg">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="progress-text">0% completado</div>
+      </div>
+      
+      <div class="quiz-layout">
+        <!-- Panel Izquierdo: Pregunta y Opciones -->
+        <div class="question-panel">
+          <div id="question-category">Categoría del examen</div>
+          <h2 id="question-text">Aquí va la pregunta a responder...</h2>
+          <div id="options-container">
+            <!-- Las opciones se inyectan dinámicamente con JS -->
+          </div>
+        </div>
+        
+        <!-- Panel Derecho: Notas y Dudas -->
+        <div class="sidebar-panel">
+          <div class="note-box-card">
+            <h4>✍️ Notas sobre esta pregunta</h4>
+            <p>Escribe palabras clave, dudas o por qué elegiste esta opción para recordarlo en el repaso:</p>
+            <textarea id="note-input" class="styled-textarea" placeholder="Escribe aquí tus observaciones para esta pregunta..."></textarea>
+          </div>
+          
+          <div class="note-box-card">
+            <h4>💡 Dudas generales del Área 1</h4>
+            <p>Anota conceptos teóricos que sientas débiles y quieras estudiar más a fondo:</p>
+            <textarea id="general-notes-input" class="styled-textarea" placeholder="Escribe tus dudas generales del área de Análisis..."></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navegación Inferior -->
+      <div class="navigation-bar">
+        <button id="prev-btn" class="btn btn-secondary">← Anterior</button>
+        <button id="submit-btn" class="btn btn-secondary">Terminar Examen ✓</button>
+        <button id="next-btn" class="btn btn-primary">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA DE RESULTADOS -->
+    <div id="results-screen" class="hidden">
+      <div class="results-header-container">
+        <h1>📊 Resultado del Simulador</h1>
+        <div class="score-circle-outer">
+          <span id="score-percentage" class="score-number">0%</span>
+        </div>
+        <h2 id="score-title">Aciertos: 0 de 10</h2>
+        <div id="status-message" class="status-info">Evaluando...</div>
+      </div>
+      
+      <h2 class="results-details-title">Retroalimentación y Cuaderno de Estudio</h2>
+      <div id="detailed-results">
+        <!-- Los resultados detallados con justificaciones y notas del usuario se inyectan aquí -->
+      </div>
+      
+      <div class="action-buttons">
+        <button id="save-btn" class="btn btn-primary">💾 Guardar Resultados y Terminar</button>
+        <button id="restart-btn" class="btn btn-secondary">🔄 Volver a Intentar</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

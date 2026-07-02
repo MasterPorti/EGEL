@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Estudio Interactiva - EGEL Plus ISOFT</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos específicos para la Guía de Estudio */
+    .study-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .study-nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    .study-nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .study-nav-link:hover, .study-nav-link.active {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    
+    /* Sistema de Pestañas */
+    .tabs-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .tab-btn {
+      font-family: var(--font-family);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 12px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+    .tab-btn:hover, .tab-btn.active {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary-light);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+    .tab-content-panel {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    
+    /* Tarjetas de Memoria (Flashcards) */
+    .flashcards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      perspective: 1000px;
+    }
+    .flashcard {
+      width: 100%;
+      height: 200px;
+      cursor: pointer;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .card-front {
+      background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(22, 22, 38, 0.8) 100%);
+      border: 1px solid rgba(123, 44, 191, 0.3);
+      color: var(--text-main);
+    }
+    .card-front h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+    .card-front span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .card-back {
+      background: linear-gradient(135deg, rgba(22, 22, 38, 0.9) 0%, rgba(0, 242, 254, 0.1) 100%);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      color: var(--text-main);
+      transform: rotateY(180deg);
+      font-size: 0.9rem;
+      line-height: 1.4;
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+    .card-back h4 {
+      color: var(--secondary);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    
+    /* Diagramas Visuales con CSS */
+    .visual-diagram {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .diagram-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .diagram-element {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .element-actor {
+      border-color: var(--secondary);
+      background: rgba(0, 242, 254, 0.05);
+    }
+    .element-usecase {
+      border-radius: 50px;
+      border-color: var(--primary-light);
+      background: rgba(157, 78, 221, 0.05);
+      padding: 12px 25px;
+    }
+    .diagram-arrow {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 600;
+    }
+    
+    /* Comparativa Agregación vs Composición */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    @media (max-width: 700px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .comparison-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .comparison-header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Notepad de estudio en el footer */
+    .study-notepad {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 30px;
+      margin-top: 30px;
+    }
+    .notepad-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .notepad-status {
+      font-size: 0.85rem;
+      color: var(--success);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Barra de Navegación de Estudio -->
+    <div class="study-nav">
+      <h2 style="font-weight: 700; font-size: 1.4rem; background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        🎓 EGEL Plus ISOFT
+      </h2>
+      <div class="study-nav-links">
+        <a href="index.html" class="study-nav-link">Simulador</a>
+        <a href="estudio.html" class="study-nav-link active">Guía Interactiva</a>
+      </div>
+    </div>
+
+    <!-- Encabezado de la Guía -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <h1>📚 GUÍA INTERACTIVA DE ESTUDIO</h1>
+      <p class="subtitle" style="margin-bottom: 20px;">
+        Repasa los conceptos clave y trucos de examen para **UML** y **Atributos de Calidad**. Haz clic en los botones de pestañas y en las tarjetas para interactuar.
+      </p>
+    </div>
+
+    <!-- Menú de Pestañas -->
+    <div class="tabs-buttons">
+      <button class="tab-btn active" onclick="switchTab('calidad')"> Atributos de Calidad (ISO 25010)</button>
+      <button class="tab-btn" onclick="switchTab('casos')"> UML: Casos de Uso</button>
+      <button class="tab-btn" onclick="switchTab('clases')"> UML: Diagrama de Clases</button>
+      <button class="tab-btn" onclick="switchTab('secuencia')"> UML: Diagrama de Secuencia</button>
+    </div>
+
+    <!-- CONTENIDOS -->
+    
+    <!-- Pestaña 1: Atributos de Calidad -->
+    <div id="tab-calidad" class="tab-content-panel">
+      <h2>🔍 Atributos de Calidad de Software</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.5;">
+        El examen evalúa si puedes asociar restricciones técnicas con sus respectivos atributos de calidad bajo el estándar <strong>ISO/IEC 25010</strong>.
+      </p>
+      
+      <div class="flashcards-grid">
+        <!-- Card 1 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="card-face card-front">
+            <span>Atributo</span>
+            <h3>Portabilidad</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Haz clic para girar</p>
+          </div>
+          <div class="card-face card-back">
+            <h4>Portabilidad</h4>
+            <p><strong>Clave CENEVAL:</strong> Ejecutar en diferentes entornos o sistemas operativos.</p>
+            <p style="margin-top: 8px;"><strong>Ejemplo:</strong> <em>"El sistema debe ser compatible con navegadores Android, iOS, Chrome y Edge."</em></p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="card-face card-front">
+            <span>Atributo</span>
+            <h3>Mantenibilidad</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Haz clic para girar</p>
+          </div>
+          <div class="card-face card-back">
+            <h4>Mantenibilidad</h4>
+            <p><strong>Clave CENEVAL:</strong> Facilidad para modificar, actualizar o corregir errores.</p>
+            <p style="margin-top: 8px;"><strong>Ejemplo:</strong> <em>"El tiempo máximo estimado para corregir un bug crítico no debe exceder las 4 horas."</em></p>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="card-face card-front">
+            <span>Atributo</span>
+            <h3>Fiabilidad</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Haz clic para girar</p>
+          </div>
+          <div class="card-face card-back">
+            <h4>Fiabilidad</h4>
+            <p><strong>Clave CENEVAL:</strong> Tolerar fallas y mantener la continuidad operativa.</p>
+            <p style="margin-top: 8px;"><strong>Ejemplo:</strong> <em>"Si se cae la red principal, el sistema debe activar la de respaldo en menos de 10s."</em></p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flashcard" onclick="flipCard(this)">
+          <div class="card-face card-front">
+            <span>Atributo</span>
+            <h3>Usabilidad</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Haz clic para girar</p>
+          </div>
+          <div class="card-face card-back">
+            <h4>Usabilidad</h4>
+            <p><strong>Clave CENEVAL:</strong> Facilidad de aprendizaje, estética y operatividad del usuario.</p>
+            <p style="margin-top: 8px;"><strong>Ejemplo:</strong> <em>"Un usuario sin capacitación debe poder registrar una venta en menos de 2 minutos."</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pestaña 2: Casos de Uso -->
+    <div id="tab-casos" class="tab-content-panel hidden">
+      <h2>📐 UML: Diagrama de Casos de Uso</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.5;">
+        Los casos de uso representan las funciones del sistema. La duda principal en el examen radica en diferenciar la obligatoriedad de la condicionalidad.
+      </p>
+
+      <div class="visual-diagram">
+        <h4 style="color: var(--secondary); margin-bottom: 10px;">Esquema de Relaciones</h4>
+        
+        <!-- Caso Include -->
+        <div class="diagram-row">
+          <div class="diagram-element element-usecase">Transferir Fondos</div>
+          <div class="diagram-arrow">
+            <span>&lt;&lt;include&gt;&gt;</span>
+            <span style="font-size: 1.2rem;">➔</span>
+          </div>
+          <div class="diagram-element element-usecase" style="border-color: var(--success);">Validar Token</div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+          <strong>Relación de Inclusión (Obligatoria):</strong> El sistema no puede transferir fondos si no valida el token. Ocurre siempre.
+        </p>
+
+        <hr style="width: 100%; border: 0; border-top: 1px solid rgba(255,255,255,0.05); margin: 15px 0;">
+
+        <!-- Caso Extend -->
+        <div class="diagram-row">
+          <div class="diagram-element element-usecase">Realizar Compra</div>
+          <div class="diagram-arrow">
+            <span>&lt;&lt;extend&gt;&gt;</span>
+            <span style="font-size: 1.2rem;">⤏</span>
+          </div>
+          <div class="diagram-element element-usecase" style="border-color: var(--warning);">Aplicar Cupón</div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+          <strong>Relación de Extensión (Opcional):</strong> El usuario puede comprar de forma normal. Solo si tiene un cupón y decide ingresarlo, se extiende el caso de uso.
+        </p>
+      </div>
+
+      <div class="comparison-card" style="background: rgba(255, 179, 0, 0.03); border-color: rgba(255, 179, 0, 0.1); margin-top: 20px;">
+        <h4 style="color: var(--warning); margin-bottom: 8px;">💡 Truco de Examen:</h4>
+        <p style="font-size: 0.95rem; line-height: 1.4;">
+          Si el reactivo dice <em>"necesita obligatoriamente para completarse..."</em> la respuesta es <strong>&lt;&lt;include&gt;&gt;</strong>. Si el reactivo dice <em>"opcionalmente, en caso de que ocurra X evento..."</em> la respuesta es <strong>&lt;&lt;extend&gt;&gt;</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pestaña 3: Diagrama de Clases -->
+    <div id="tab-clases" class="tab-content-panel hidden">
+      <h2>◇ Relación Todo-Parte: Agregación vs Composición ◆</h2>
+      <p style="color: var(--text-muted); line-height: 1.5;">
+        Ambas representan relaciones donde una clase es "dueña" de otra, pero la diferencia radica en la dependencia del ciclo de vida de la parte respecto al todo.
+      </p>
+
+      <div class="comparison-grid">
+        
+        <!-- Agregación -->
+        <div class="comparison-card">
+          <div class="comparison-header">
+            <span style="color: var(--secondary); font-size: 1.5rem;">◇</span>
+            <h3>Agregación (Relación Débil)</h3>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.4; color: var(--text-muted); margin-bottom: 15px;">
+            El objeto "parte" puede existir y seguir operando por sí solo, incluso si el objeto "todo" es destruido.
+          </p>
+          <div class="visual-diagram" style="padding: 10px; margin: 10px 0;">
+            <div class="diagram-row" style="gap: 10px;">
+              <span class="diagram-element">Empresa</span>
+              <span style="color: var(--secondary); font-weight: bold;">◇—</span>
+              <span class="diagram-element">Empleado</span>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.4;">
+            <strong>Ejemplo:</strong> Si la empresa desaparece, los empleados no dejan de existir, simplemente se quedan sin empleo o se asocian a otra empresa.
+          </p>
+        </div>
+
+        <!-- Composición -->
+        <div class="comparison-card" style="border-color: rgba(255, 0, 127, 0.2);">
+          <div class="comparison-header">
+            <span style="color: var(--accent); font-size: 1.5rem;">◆</span>
+            <h3>Composición (Relación Fuerte)</h3>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.4; color: var(--text-muted); margin-bottom: 15px;">
+            El objeto "parte" no tiene sentido de existir o se destruye físicamente cuando el objeto "todo" deja de existir.
+          </p>
+          <div class="visual-diagram" style="padding: 10px; margin: 10px 0;">
+            <div class="diagram-row" style="gap: 10px;">
+              <span class="diagram-element">Escuela</span>
+              <span style="color: var(--accent); font-weight: bold;">◆—</span>
+              <span class="diagram-element">Aula</span>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.4;">
+            <strong>Ejemplo:</strong> Si la escuela se destruye físicamente, las aulas físicas construidas dentro de ella también son destruidas y desaparecen.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pestaña 4: Diagrama de Secuencia -->
+    <div id="tab-secuencia" class="tab-content-panel hidden">
+      <h2>⏱️ UML: Diagrama de Secuencia</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.5;">
+        Se enfoca en modelar la interacción entre los objetos a lo largo del tiempo. Es el diagrama por excelencia para modelar la dinámica de patrones como el MVC.
+      </p>
+
+      <div class="visual-diagram" style="align-items: stretch; max-width: 600px; margin: 0 auto;">
+        <h4 style="color: var(--secondary); text-align: center; margin-bottom: 15px;">Componentes Críticos</h4>
+        
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--secondary);">
+              <th style="padding: 8px;">Elemento</th>
+              <th style="padding: 8px;">Representación</th>
+              <th style="padding: 8px;">¿Qué indica?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <td style="padding: 12px 8px; font-weight: 600;">Línea de Vida (Lifeline)</td>
+              <td style="padding: 12px 8px; color: var(--warning);">Línea punteada vertical</td>
+              <td style="padding: 12px 8px; color: var(--text-muted);">La existencia del objeto en el tiempo.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <td style="padding: 12px 8px; font-weight: 600;">Foco de Control / Activación</td>
+              <td style="padding: 12px 8px; color: var(--warning);">Rectángulo vertical sobre la línea</td>
+              <td style="padding: 12px 8px; color: var(--text-muted);">El período durante el cual el objeto está realizando una acción.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <td style="padding: 12px 8px; font-weight: 600;">Llamada de Mensaje</td>
+              <td style="padding: 12px 8px; color: var(--warning);">Flecha sólida continua (➔)</td>
+              <td style="padding: 12px 8px; color: var(--text-muted);">Envío de una petición o ejecución de método.</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 8px; font-weight: 600;">Mensaje de Retorno</td>
+              <td style="padding: 12px 8px; color: var(--warning);">Flecha punteada (⤏)</td>
+              <td style="padding: 12px 8px; color: var(--text-muted);">Devolución de datos al objeto llamador.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CUADERNO DE ANOTACIONES PERSISTENTES -->
+    <div class="study-notepad">
+      <div class="notepad-header">
+        <h3 style="font-weight: 600; display: flex; align-items: center; gap: 8px;">
+          📝 Mi Libreta de Notas del Área 1
+        </h3>
+        <span id="notepad-status" class="notepad-status" style="display: none;">✓ Guardado en disco</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">
+        Anota definiciones con tus propias palabras, recordatorios o dudas. Tus notas se guardarán automáticamente en el servidor local de persistencia (<code>notas_estudio.json</code>) para que no las pierdas.
+      </p>
+      <textarea id="study-notes-area" class="styled-textarea" placeholder="Escribe tus notas de estudio aquí..." style="min-height: 180px; font-size: 1rem; padding: 15px; margin-bottom: 20px;"></textarea>
+      
+      <div style="text-align: right;">
+        <button id="save-notes-btn" class="btn btn-primary">💾 Guardar Mis Notas de Estudio</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Cambio de Pestañas
+    function switchTab(tabId) {
+      // Ocultar todos los paneles
+      document.querySelectorAll('.tab-content-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      
+      // Remover active de todos los botones
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Mostrar el seleccionado
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+      
+      // Activar el botón correspondiente
+      event.currentTarget.classList.add('active');
+    }
+
+    // Voltear Flashcards
+    function flipCard(cardElement) {
+      cardElement.classList.toggle('flipped');
+    }
+
+    // Persistencia de notas de estudio
+    const notesArea = document.getElementById("study-notes-area");
+    const saveNotesBtn = document.getElementById("save-notes-btn");
+    const notepadStatus = document.getElementById("notepad-status");
+
+    // Cargar notas al iniciar
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const response = await fetch('/api/load-notes');
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.notes) {
+            notesArea.value = data.notes;
+          }
+        }
+      } catch (e) {
+        console.error("Error al cargar notas de estudio:", e);
+      }
+    });
+
+    // Guardar notas al presionar el botón
+    saveNotesBtn.addEventListener("click", async () => {
+      saveNotesBtn.disabled = true;
+      saveNotesBtn.textContent = "Guardando...";
+      
+      try {
+        const response = await fetch('/api/save-notes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            notes: notesArea.value,
+            lastUpdated: new Date().toISOString()
+          })
+        });
+        
+        if (response.ok) {
+          notepadStatus.style.display = "inline";
+          notepadStatus.textContent = "✓ Guardado con éxito";
+          setTimeout(() => {
+            notepadStatus.style.opacity = 0;
+            setTimeout(() => {
+              notepadStatus.style.display = "none";
+              notepadStatus.style.opacity = 1;
+            }, 500);
+          }, 3000);
+        } else {
+          alert("Error al guardar notas en el servidor.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error al conectar con el servidor.");
+      } finally {
+        saveNotesBtn.disabled = false;
+        saveNotesBtn.textContent = "💾 Guardar Mis Notas de Estudio";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+{
+    "timestamp": "2026-07-02T17:00:14.544Z",
+    "score": {
+        "correct": 6,
+        "total": 10,
+        "percentage": 60
+    },
+    "generalNotes": "no habia esuchdo lo de usabilidad, portabilidad o sea en telefonia es cambiar de marca facilmente no que dicen te vamos a hacer tu portabilidad",
+    "answers": [
+        {
+            "questionId": 1,
+            "category": "1.1 Tipos de Requerimientos",
+            "questionText": "Una empresa requiere que el sistema de facturación electrónica sea capaz de emitir la factura en formato PDF y XML al concluir una venta. ¿A qué tipo de requerimiento corresponde esta especificación?",
+            "selectedAnswerIndex": 0,
+            "selectedText": "A) Requerimiento Funcional.",
+            "isCorrect": true,
+            "correctText": "A) Requerimiento Funcional.",
+            "justification": "Describe una función/acción que el sistema debe realizar (generar archivos PDF/XML como resultado de concluir una venta).",
+            "userNote": "por que es lo que debe de hacer lo debe de guardar en pdf no dice que lenguaje nii nada solo dice el que no el como"
+        },
+        {
+            "questionId": 2,
+            "category": "1.1 Tipos de Requerimientos",
+            "questionText": "El siguiente requerimiento fue redactado en la especificación de un sistema: 'El módulo de administración debe ser muy fácil de usar para evitar errores del usuario.' De acuerdo con el estándar IEEE 830, ¿cuál es la principal deficiencia de este requerimiento?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) No es verificable debido al uso de términos subjetivos como 'muy fácil de usar'.",
+            "isCorrect": true,
+            "correctText": "B) No es verificable debido al uso de términos subjetivos como 'muy fácil de usar'.",
+            "justification": "El término 'muy fácil de usar' es subjetivo y no medible. Para ser verificable, debería especificar una métrica observable (ej. 'un usuario capacitado debe completar la tarea en menos de 3 minutos').",
+            "userNote": "tiene que ser claro poder saber cuando se completa no solo algo subjetivo "
+        },
+        {
+            "questionId": 3,
+            "category": "1.1 Tipos de Requerimientos",
+            "questionText": "Un requerimiento especifica: 'El sistema web debe ser compatible y funcionar correctamente en los navegadores Google Chrome v100+, Mozilla Firefox v98+ y Microsoft Edge v100+.' ¿A qué atributo de calidad corresponde?",
+            "selectedAnswerIndex": 2,
+            "selectedText": "C) Portabilidad.",
+            "isCorrect": true,
+            "correctText": "C) Portabilidad.",
+            "justification": "La portabilidad mide la facilidad con la que el software se puede transferir de un entorno de hardware o software a otro (en este caso, diferentes navegadores web).",
+            "userNote": "creo que seria portabilidad o usabilidad portabilidad me rcuerad acuando en las telefonicas te dicen quiere hacer su portabiilidad a otra comania creoq ue esportabilidad"
+        },
+        {
+            "questionId": 4,
+            "category": "1.2 Técnicas de Elicitación",
+            "questionText": "Se va a desarrollar un sistema para controlar el flujo de equipaje en un aeropuerto. El analista nota que los operadores tienen dificultades para explicar de forma oral la secuencia exacta del proceso de clasificación debido a la rapidez y automatización con la que ocurre. ¿Qué técnica de elicitación es la más adecuada en este escenario?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) Observación en el puesto de trabajo (etnografía).",
+            "isCorrect": true,
+            "correctText": "B) Observación en el puesto de trabajo (etnografía).",
+            "justification": "La observación directa en el entorno de trabajo es ideal cuando los usuarios tienen dificultades para verbalizar o detallar sus procesos operativos cotidianos.",
+            "userNote": "cuestionarios no ni ellos saben descriiblrlo tormenta de ideas lo mismo sii no saben deciirlo observacion pues va juega me pare porque uno ve y lo checa"
+        },
+        {
+            "questionId": 5,
+            "category": "1.2 Técnicas de Elicitación",
+            "questionText": "Los clientes de una startup de servicios médicos no tienen claridad sobre cómo quieren visualizar las citas y su historial médico en la aplicación móvil. ¿Qué técnica de elicitación e ingeniería de requisitos es la más recomendada para ayudarles a definir sus necesidades de manera visual?",
+            "selectedAnswerIndex": null,
+            "selectedText": "Sin responder",
+            "isCorrect": false,
+            "correctText": "A) Prototipado rápido.",
+            "justification": "El prototipado ayuda a los clientes que no tienen requerimientos claros a visualizar la solución propuesta e identificar lo que realmente necesitan o desean cambiar.",
+            "userNote": "yo usaria la a porque como no saben si les muestro un mvp de eso ya nos podemos ir dando la idea de como ir avanzando"
+        },
+        {
+            "questionId": 6,
+            "category": "1.2 Técnicas de Elicitación",
+            "questionText": "Un equipo ágil utiliza una técnica de priorización en la que clasifican los requerimientos en categorías de 'Esencial para la liberación inicial (Must)', 'Importante pero no vital (Should)', 'Podría incluirse si hay recursos (Could)' y 'No se incluirá en esta fase (Won't)'. ¿Cómo se le conoce a esta técnica?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) Técnica MoSCoW.",
+            "isCorrect": true,
+            "correctText": "B) Técnica MoSCoW.",
+            "justification": "La técnica MoSCoW clasifica requerimientos en Must have (debe tener), Should have (debería tener), Could have (podría tener) y Won't have (no tendrá por ahora).",
+            "userNote": "son sus siglas las demas 1 y la Ay C no la conozco"
+        },
+        {
+            "questionId": 7,
+            "category": "1.3 Documentación de Requerimientos (UML)",
+            "questionText": "En el modelado de casos de uso de un sistema bancario, la acción de 'Transferir Fondos' requiere obligatoriamente que el sistema ejecute la acción de 'Validar Token de Seguridad'. ¿Qué relación se debe modelar entre ambos casos de uso?",
+            "selectedAnswerIndex": null,
+            "selectedText": "Sin responder",
+            "isCorrect": false,
+            "correctText": "B) Relación de inclusión (<<include>>).",
+            "justification": "Una relación <<include>> indica que el caso de uso origen incluye obligatoriamente el comportamiento del caso de uso destino para poder completarse.",
+            "userNote": "no se eso si no se a que se refiere"
+        },
+        {
+            "questionId": 8,
+            "category": "1.3 Documentación de Requerimientos (UML)",
+            "questionText": "Se está diseñando el modelo de datos orientado a objetos para un sistema escolar. Se tiene la clase 'Escuela' y la clase 'Aula'. Si la escuela se clausura y se destruye, las aulas asociadas a ella también dejan de existir físicamente en el sistema. ¿Qué tipo de relación y representación gráfica UML es la correcta entre Escuela (el todo) y Aula (la parte)?",
+            "selectedAnswerIndex": null,
+            "selectedText": "Sin responder",
+            "isCorrect": false,
+            "correctText": "B) Composición, representada con un rombo relleno (◆) del lado de Escuela.",
+            "justification": "La composición (rombo relleno ◆) representa una relación fuerte 'todo-parte' donde el tiempo de vida de la parte está condicionado al del todo; si el todo se destruye, las partes también.",
+            "userNote": "Pregunta 8 de 10 | 1.3 Documentación de Requerimientos (UML)\ntampoco no se que sea un grafico UML"
+        },
+        {
+            "questionId": 9,
+            "category": "1.3 Documentación de Requerimientos (UML)",
+            "questionText": "Estás diseñando una funcionalidad y necesitas representar detalladamente cómo interactúan los objetos (como la vista, el controlador y el modelo) a lo largo del tiempo, mostrando el orden cronológico exacto en que se envían y reciben los mensajes. ¿Qué diagrama UML es el más adecuado?",
+            "selectedAnswerIndex": null,
+            "selectedText": "Sin responder",
+            "isCorrect": false,
+            "correctText": "C) Diagrama de Secuencia.",
+            "justification": "El diagrama de secuencia muestra la interacción de objetos organizados en una secuencia de tiempo, detallando los mensajes enviados entre ellos y sus líneas de vida.",
+            "userNote": "se que es el MVC pero esos diagramas ni la menor idea"
+        },
+        {
+            "questionId": 10,
+            "category": "1.3 Documentación de Requerimientos (UML)",
+            "questionText": "Al realizar una auditoría de software, se solicita rastrear un requerimiento de negocio específico desde su origen con el cliente, pasando por su diseño, su implementación en código, hasta el caso de prueba unitaria que lo valida. ¿Qué artefacto de ingeniería de requerimientos permite hacer esto de forma directa?",
+            "selectedAnswerIndex": 0,
+            "selectedText": "A) Matriz de Trazabilidad.",
+            "isCorrect": true,
+            "correctText": "A) Matriz de Trazabilidad.",
+            "justification": "La matriz de trazabilidad es una tabla que asocia los requerimientos con los artefactos de las etapas posteriores del ciclo de vida (diseño, código, pruebas) para garantizar la cobertura.",
+            "userNote": "no estoy seguro por intuicion yo digo matriz de trazabilidad\n"
+        }
+    ]
+}

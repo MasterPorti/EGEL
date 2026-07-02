@@ -1,0 +1,122 @@
+{
+    "timestamp": "2026-07-02T18:26:08.971Z",
+    "module": "Simulador Personalizado: Área 1 (PDF + IA)",
+    "score": {
+        "correct": 8,
+        "total": 10,
+        "percentage": 80
+    },
+    "generalNotes": "",
+    "answers": [
+        {
+            "questionId": 1,
+            "category": "1.3 Documentación de Requerimientos (Real PDF)",
+            "questionText": "¿Qué condición define las circunstancias para que una operación en particular sea válida?",
+            "selectedAnswerIndex": 0,
+            "selectedText": "A) Postcondición.",
+            "isCorrect": false,
+            "correctText": "B) Condición previa (Precondición).",
+            "justification": "La precondición define las circunstancias, restricciones o estado que el sistema debe cumplir para que una operación o caso de uso en particular sea ejecutable y válido.",
+            "userNote": "no lo he estudiiado en el area 1 le podre a para que se valide tiene que ser una postcondiicion pero ni diade"
+        },
+        {
+            "questionId": 2,
+            "category": "1.1 Análisis de Requerimientos (Real PDF)",
+            "questionText": "¿En qué etapa del ciclo de vida del software es menor el costo de corregir un error o defecto?",
+            "selectedAnswerIndex": 2,
+            "selectedText": "C) Etapa de análisis de requerimientos.",
+            "isCorrect": true,
+            "correctText": "C) Etapa de análisis de requerimientos.",
+            "justification": "Según los modelos empíricos de ingeniería de software (como el de Boehm), corregir un defecto durante el análisis de requerimientos es el momento más temprano y, por ende, el más barato. El costo se incrementa exponencialmente en etapas posteriores.",
+            "userNote": "C) porque desde antes de que se haga ek desarrollo o el diseño lo primero que se hace los el analis de requerimieintos "
+        },
+        {
+            "questionId": 3,
+            "category": "1.3 Documentación de Requerimientos (Real PDF)",
+            "questionText": "El diccionario de datos en el análisis estructurado de sistemas contiene descripciones de cada:",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) Objeto de datos y flujo de datos.",
+            "isCorrect": true,
+            "correctText": "B) Objeto de datos y flujo de datos.",
+            "justification": "El diccionario de datos es un almacén centralizado de metadatos que describe el significado, estructura y flujos de todos los objetos de datos que maneja el sistema.",
+            "userNote": "segun yo tengo la diea de un dicionario de datos de python pero yo difo que es la b "
+        },
+        {
+            "questionId": 4,
+            "category": "1.1 Modelado Orientado a Objetos (Real PDF)",
+            "questionText": "¿Cuál de estos no es un elemento de un modelo de análisis orientado a objetos?",
+            "selectedAnswerIndex": null,
+            "selectedText": "Sin responder",
+            "isCorrect": false,
+            "correctText": "B) Elementos de datos (o bases de datos relacionales concretas).",
+            "justification": "El modelo de análisis se enfoca en representar el espacio del problema a través de abstracciones conceptuales (escenarios, comportamiento, clases lógicas), y no en la definición concreta de elementos de datos físicos o almacenamiento de bajo nivel.",
+            "userNote": "no se no lo e visto en la area 1 pero yo creo que por lo que e visto en poo no tiiene conectad oa la base de datos eso seria un interfaz que haga el puente"
+        },
+        {
+            "questionId": 5,
+            "category": "1.2 Técnicas de Obtención y Análisis (Real PDF)",
+            "questionText": "La técnica que permite que un ingeniero de software entienda cómo se completa un proceso de trabajo cuando se incluye a varias personas y roles se denomina:",
+            "selectedAnswerIndex": 0,
+            "selectedText": "A) Análisis de flujo de trabajo (Workflow Analysis).",
+            "isCorrect": true,
+            "correctText": "A) Análisis de flujo de trabajo (Workflow Analysis).",
+            "justification": "El análisis de flujo de trabajo (Workflow Analysis) permite modelar paso a paso cómo interactúan diferentes roles, personas y subsistemas para realizar una tarea de negocio compleja.",
+            "userNote": "creo que es esa orque pues la pregunta diicie se comleta un porfeso de trabajo y workflow es eso la b no por que aceptaicion no van a aceptar nada no se esta haciendo nada y de analiisis de casos asosiativos nunca he escuchado de eso"
+        },
+        {
+            "questionId": 6,
+            "category": "1.1 Tipos de Requerimientos (IA EGEL)",
+            "questionText": "Se especifica lo siguiente: 'El sistema debe generar un archivo log de auditoría cada vez que un administrador modifique los roles de un usuario.' ¿A qué tipo de requerimiento corresponde?",
+            "selectedAnswerIndex": 0,
+            "selectedText": "A) Requerimiento Funcional.",
+            "isCorrect": true,
+            "correctText": "A) Requerimiento Funcional.",
+            "justification": "Es una función o servicio directo que el sistema debe realizar activamente (escribir un log ante una acción), por lo tanto, es un Requerimiento Funcional.",
+            "userNote": "por que dice el que nunca dice el como si idijiera el como serai la b "
+        },
+        {
+            "questionId": 7,
+            "category": "1.2 Técnicas de Elicitación (IA EGEL)",
+            "questionText": "Un analista de requerimientos planea recopilar información de 800 clientes de un banco que están ubicados en 15 ciudades diferentes del país para conocer su opinión sobre una posible nueva función de la app móvil. ¿Qué técnica de elicitación es la más eficiente?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) Envío de cuestionarios cerrados digitales.",
+            "isCorrect": true,
+            "correctText": "B) Envío de cuestionarios cerrados digitales.",
+            "justification": "Para audiencias masivas y distribuidas geográficamente, los cuestionarios/encuestas cerradas digitales son la técnica más eficiente para recolectar datos cuantitativos a bajo costo.",
+            "userNote": "mucha gente para un JAD mucho tiempor para entrevistas  es b"
+        },
+        {
+            "questionId": 8,
+            "category": "1.3 Documentación - UML (IA EGEL)",
+            "questionText": "En un diagrama de casos de uso para un portal de reserva de vuelos, el caso de uso base es 'Reservar Asiento'. Opcionalmente, si el usuario cuenta con millas acumuladas, el sistema le permite ejecutar el caso de uso 'Pagar con Millas'. ¿Qué relación UML debe modelar esta interacción?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) <<extend>> desde 'Pagar con Millas' hacia 'Reservar Asiento'.",
+            "isCorrect": true,
+            "correctText": "B) <<extend>> desde 'Pagar con Millas' hacia 'Reservar Asiento'.",
+            "justification": "El pago con millas es opcional y condicional. Por lo tanto, el caso de uso 'Pagar con Millas' extiende (<<extend>>) al caso de uso base 'Reservar Asiento' bajo un flujo alterno.",
+            "userNote": "EXTEND ES POR QUE NO ES OBLIGATORIO ES OPCIONAL"
+        },
+        {
+            "questionId": 9,
+            "category": "1.3 Documentación - UML (IA EGEL)",
+            "questionText": "Se diseña una relación de clases para un sistema de e-commerce. Se tiene la clase 'Pedido' (el todo) y la clase 'ArticuloPedido' (la parte). Si el cliente cancela y destruye el 'Pedido', las líneas de 'ArticuloPedido' asociadas a ese pedido pierden su razón de ser y deben ser eliminadas del sistema. ¿Qué tipo de relación y representación gráfica UML es la correcta?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) Composición (rombo relleno ◆ del lado de Pedido).",
+            "isCorrect": true,
+            "correctText": "B) Composición (rombo relleno ◆ del lado de Pedido).",
+            "justification": "Es una relación de composición (rombo relleno ◆) porque el ciclo de vida de la parte (ArticuloPedido) está completamente ligado y subordinado al del todo (Pedido).",
+            "userNote": "DEPENDE TOTALMENTE DEL PEDIDO YA C NINCA LE HE ESCUCHADO"
+        },
+        {
+            "questionId": 10,
+            "category": "1.3 Trazabilidad de Requerimientos (IA EGEL)",
+            "questionText": "¿Cuál es el propósito principal de una Matriz de Trazabilidad de Requerimientos en un proyecto de software?",
+            "selectedAnswerIndex": 1,
+            "selectedText": "B) Rastrear los requerimientos a lo largo del ciclo de vida (desde su origen hasta el diseño, código y pruebas).",
+            "isCorrect": true,
+            "correctText": "B) Rastrear los requerimientos a lo largo del ciclo de vida (desde su origen hasta el diseño, código y pruebas).",
+            "justification": "La matriz de trazabilidad vincula los requerimientos individuales con su origen y con los artefactos de diseño, módulos de código y casos de prueba para asegurar que todo requerimiento sea implementado y verificado.",
+            "userNote": ""
+        }
+    ]
+}

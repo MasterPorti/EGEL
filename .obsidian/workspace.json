@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b9b4ee088814bafc",
+        "id": "4fbdc00c5d72d160",
         "type": "tabs",
         "children": [
           {
-            "id": "2c4a30fc6a2b94f9",
+            "id": "bf1851dc871ea514",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "estudio_area_2_diseno.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "estudio_area_2_diseno"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -183,10 +179,12 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "2c4a30fc6a2b94f9",
+  "active": "bf1851dc871ea514",
   "lastOpenFiles": [
-    "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
+    "Sin título.canvas",
     "estudio_area_2_diseno.md",
+    "Sin nombre",
+    "GUIA_COMPLETA_EGEL_PLUS_ISOFT.md",
     "temario_detallado_egel.md"
   ]
 }
